@@ -19,5 +19,4 @@ Um sistema desenvolvido para atender às necessidades das igrejas, facilitando o
 Siga este passo a passo para configurar o projeto em sua máquina local:
 
 1. **Clone o repositório:**
-   ```bash
 https://github.com/Byelsantos11/Projeto-Aparecida.git

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        /* Estilo para o fundo */
+        body {
+            background-image: url('https://img.cancaonova.com/cnimages/canais/uploads/sites/2/2022/10/Nossa-Senhora-Aparecida-1.jpg'); /* Substitua pelo caminho da sua imagem */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #fff;
+        }
+
+        /* Estilo do formulário de cadastro */
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Fundo translúcido */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #000; /* Cor do texto para melhor visibilidade */
+        }
+
+        .form-control:focus {
+            box-shadow: none;
+            border-color: #007bff;
+        }
+
+        .form-control.is-invalid {
+            border-color: #dc3545;
+        }
+
+        .form-control.is-valid {
+            border-color: #28a745;
+        }
+
+        .feedback-valid {
+            color: #28a745;
+        }
+
+        .feedback-invalid {
+            color: #dc3545;
+        }
+
+        #motorista-info, #acompanhantes {
+            display: none;
+        }
+
+        .text-center {
+            color: #000; /* Cor do título */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center mb-4"> Cadastro</h2>
+
+        <!-- Formulário de cadastro -->
+        <form id="cadastroForm">
+            <!-- Nome -->
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required>
+            </div>
+
+            <!-- Documento -->
+            <div class="form-group">
+                <label for="documento">Documento</label>
+                <input type="text" class="form-control" id="documento" placeholder="Digite seu documento" required>
+            </div>
+
+            <!-- Tipo de usuário -->
+            <div class="form-group">
+                <label for="tipo">Tipo de Usuário</label>
+                <select class="form-control" id="tipo" required>
+                    <option value="">Selecione...</option>
+                    <option value="passageiro">Passageiro</option>
+                    <option value="coordenador">Coordenador</option>
+                    <option value="motorista">Motorista</option>
+                </select>
+            </div>
+
+            <!-- Informações adicionais para Passageiros -->
+            <div id="acompanhantes" class="form-group">
+                <label for="quantidadeAcompanhantes">Quantidade de Acompanhantes</label>
+                <input type="number" class="form-control" id="quantidadeAcompanhantes" placeholder="Digite a quantidade de acompanhantes">
+            </div>
+
+            <!-- Informações adicionais para Motoristas -->
+            <div id="motorista-info">
+                <div class="form-group">
+                    <label for="numeroHabilitacao">Número da Habilitação</label>
+                    <input type="text" class="form-control" id="numeroHabilitacao" placeholder="Digite o número da habilitação">
+                </div>
+                <div class="form-group">
+                    <label for="certificacoes">Certificações</label>
+                    <input type="text" class="form-control" id="certificacoes" placeholder="Digite as certificações">
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Digite seu email" required>
+            </div>
+
+            <!-- Telefone -->
+            <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="tel" class="form-control" id="telefone" placeholder="Digite seu telefone" required>
+            </div>
+
+            <!-- Botão de envio -->
+            <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS e dependências -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.getElementById('tipo').addEventListener('change', function() {
+            var tipoUsuario = this.value;
+            var motoristaInfo = document.getElementById('motorista-info');
+            var acompanhantes = document.getElementById('acompanhantes');
+            
+            motoristaInfo.style.display = (tipoUsuario === 'motorista') ? 'block' : 'none';
+            acompanhantes.style.display = (tipoUsuario === 'passageiro') ? 'block' : 'none';
+        });
+    </script>
+</body>
+</html>

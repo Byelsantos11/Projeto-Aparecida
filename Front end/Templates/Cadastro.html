@@ -1,68 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/CSS/stylesCadastro.css">
 
-    <style>
-        /* Estilo para o fundo */
-        body {
-            background-image: url('https://img.cancaonova.com/cnimages/canais/uploads/sites/2/2022/10/Nossa-Senhora-Aparecida-1.jpg'); /* Substitua pelo caminho da sua imagem */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            color: #fff;
-        }
-
-        /* Estilo do formulário de cadastro */
-        .container {
-            background-color: rgba(255, 255, 255, 0.8); /* Fundo translúcido */
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 50px;
-        }
-
-        .form-group label {
-            font-weight: bold;
-            color: #000; /* Cor do texto para melhor visibilidade */
-        }
-
-        .form-control:focus {
-            box-shadow: none;
-            border-color: #007bff;
-        }
-
-        .form-control.is-invalid {
-            border-color: #dc3545;
-        }
-
-        .form-control.is-valid {
-            border-color: #28a745;
-        }
-
-        .feedback-valid {
-            color: #28a745;
-        }
-
-        .feedback-invalid {
-            color: #dc3545;
-        }
-
-        #motorista-info, #acompanhantes {
-            display: none;
-        }
-
-        .text-center {
-            color: #000; /* Cor do título */
-        }
-    </style>
-</head>
+    </head>
 <body>
     <div class="container">
         <h2 class="text-center mb-4"> Cadastro</h2>
@@ -116,6 +63,12 @@
                 <input type="email" class="form-control" id="email" placeholder="Digite seu email" required>
             </div>
 
+             <!-- Senha -->
+             <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="senha" class="form-control" id="email" placeholder="Digite sua senha" required>
+            </div>
+
             <!-- Telefone -->
             <div class="form-group">
                 <label for="telefone">Telefone</label>
@@ -132,15 +85,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script>
-        document.getElementById('tipo').addEventListener('change', function() {
-            var tipoUsuario = this.value;
-            var motoristaInfo = document.getElementById('motorista-info');
-            var acompanhantes = document.getElementById('acompanhantes');
-            
-            motoristaInfo.style.display = (tipoUsuario === 'motorista') ? 'block' : 'none';
-            acompanhantes.style.display = (tipoUsuario === 'passageiro') ? 'block' : 'none';
-        });
-    </script>
+
+    <script src="../static/JS/ScriptCadastro.js"></script>
+
 </body>
 </html>

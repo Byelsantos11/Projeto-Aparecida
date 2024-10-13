@@ -18,20 +18,7 @@ def Cadastrar(request):
 def Home(request):
     return render (request, "Home.html") #Renderiza tela home
 
-
-
-
-def RegistrarPassageiro(request): #Cadastrar passageiro
-    if request.method=="POST":
-        data= json.load(request.body)
-        form= PassageiroCreationForm(data)
-        if form.is_valid():
-            passageiro= form.save(commit=True)
-            return JsonResponse({'status': 'sucess', 'message': "Passageiro registrado com sucesso!"})
-        else:
-             return JsonResponse({'status': 'error', 'errors': form.errors}, status=400)
-            
-            
+  
 @csrf_exempt
 def register_passageiro(request):  #Registrar usuário no sistema
     if request.method == 'POST':

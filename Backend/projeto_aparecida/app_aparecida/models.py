@@ -1,15 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-class Passageiro(AbstractUser): #Classe Passageiro
-    nome = models.CharField(max_length=100)
-    documento = models.CharField(max_length=50)
-    telefone = models.CharField(max_length=30)
-    numero_acompanhante = models.IntegerField(default=0)
-    email = models.EmailField(unique=True, max_length=100)
-
-    USERNAME_FIELD = 'email'  
-    REQUIRED_FIELDS = ['nome']  
+class Passageiro(AbstractUser):
+    nome = models.CharField(max_length=50, default='sem nome')
+    email = models.EmailField(max_length=50, unique=True) 
+    rg = models.CharField(max_length=50, unique=True, default="RG Padrão")  # Valor padrão
+    cpf = models.CharField(max_length=11, unique=True, default="00000000000")  
+    cep = models.CharField(max_length=8, default="00000000")
+    logradouro = models.CharField(max_length=255, default="Sem Logradouro")  
+    numero = models.CharField(max_length=10, default="0")  
+    tipo_usuario = models.CharField(max_length=20)
 
     def __str__(self):
-        return self.nome
+        return self.username

@@ -1,59 +1,45 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import login_required
+from .models import Passageiro
 from .forms import PassageiroCreationForm
-from django.contrib.auth import authenticate, login
-import json
-from django.views.decorators.csrf import csrf_exempt
-
-
 
 def Login(request):
-    return render(request, "Login.html") #Renderiza a tela inicial
+    return render(request, "Login.html")  # Renderiza a tela inicial
+
+def cadastros(request):
+    return render(request, "Cadastro.html")  # Renderiza tela de cadastro secundária
 
 
-def Cadastrar(request):
-    return render (request, "Cadastro.html") #Renderiza tela de cadastro secundaria
+@login_required     #permite acessar essa tela quando estiver autenticado!
+def home(request):
+    return render(request, "Home.html")  # Renderiza tela home
 
 
-def Home(request):
-    return render (request, "Home.html") #Renderiza tela home
-
-  
-@csrf_exempt
-def register_passageiro(request):  #Registrar usuário no sistema
-    if request.method == 'POST':
-        data = json.loads(request.body)
-        form = PassageiroCreationForm(data)
-
-        if form.is_valid():
-            passageiro = form.save(commit=False)
-            passageiro.set_password(data['password'])  
-            passageiro.save()
-            return JsonResponse({'status': 'success', 'message': 'Passageiro registrado com sucesso.'}, status=201)
-        else:
-            return JsonResponse({'status': 'error', 'errors': form.errors}, status=400)
-        
-        
-        
-def login_passageiro(request): #Logar usuário no sistema
+def Cadastrar(request): #Função de cadastrar usuario e enviar menssagem de sucesso!
     if request.method=="POST":
-        data= json.loads(request.body)
-        email= data.get("email")
-        senha= data.get("senha")
+        form= PassageiroCreationForm(request.POST)
+        if form.is_valid():
+            usuario= form.save()
+            return JsonResponse({"message": "Usuario cadastrado com sucesso!"})
+        else:
+            return JsonResponse({"error": form.errors}, status=400)
         
-        usuario= authenticate(request, username=email, password=senha)
+def Login_acessar(request):
+    if request.method == "POST":
+        email = request.POST['email']
+        senha = request.POST['password']  
         
-        if usuario is not None:
-            login(request, usuario)
-            redirect ("Home")
-        
-       
-            
-        
-        
- 
- 
- 
- 
- 
- 
+        try:
+            user = Passageiro.objects.get(email=email) 
+            user = authenticate(request, username=user.username, password=senha)
+            if user is not None:
+                login(request, user)
+                return JsonResponse({"message": "Login com sucesso!"})
+            else:
+                return JsonResponse({"error": "Credenciais Inválidas"}, status=401)
+        except Passageiro.DoesNotExist:
+            return JsonResponse({"error", "Usuario não existente"}, status=404)
+    
+    return JsonResponse({"error", "Método não permitido"}, status=405)

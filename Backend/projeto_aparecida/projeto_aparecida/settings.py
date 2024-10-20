@@ -35,11 +35,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app_aparecida',  # Certifique-se de que este é o app correto
+    'app_aparecida',  
 ]
 
 # Configuração do modelo de usuário personalizado
-AUTH_USER_MODEL = 'app_aparecida.Passageiro' 
+AUTH_USER_MODEL = 'app_aparecida.Passageiro'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -72,16 +73,13 @@ TEMPLATES = [
 WSGI_APPLICATION = 'projeto_aparecida.wsgi.application'
 
 # Database conexão
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'projeto_aparecida',
-        'CLIENT': {
-            'host': 'mongodb://localhost:27017/projeto_aparecida' 
-        }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 
 

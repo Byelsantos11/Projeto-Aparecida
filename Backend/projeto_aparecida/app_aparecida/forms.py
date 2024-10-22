@@ -1,4 +1,3 @@
-# app_aparecida/forms.py
 from django import forms
 from .models import Passageiro
 
@@ -7,11 +6,15 @@ class PassageiroCreationForm(forms.ModelForm):
 
     class Meta:
         model = Passageiro
-        fields = ('nome', 'email', 'rg', 'cpf', 'cep', 'logradouro', 'telefone', 'tipo_usuario', 'password')
+        fields = ('username', 'email', 'rg', 'cpf', 'cep', 'logradouro', 'telefone', 'tipo_usuario', 'password')
 
     def save(self, commit=True):
         usuario = super().save(commit=False)
-        usuario.set_password(self.cleaned_data['password'])  # Usa o método correto para salvar a senha criptografando a senha
+        usuario.set_password(self.cleaned_data['password'])
         if commit:
             usuario.save()
         return usuario
+
+
+USERNAME_FIELD = 'email'  # Define o campo que será usado para autenticação
+REQUIRED_FIELDS = ['username', 'email', 'rg', 'cpf']  # Campos obrigatórios

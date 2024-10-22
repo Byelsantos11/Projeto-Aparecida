@@ -6,14 +6,6 @@ document.getElementById('tipo').addEventListener('change', function() {
     motoristaInfo.style.display = (tipoUsuario === 'motorista') ? 'block' : 'none';
 });
 
-// Função para exibir feedback visual
-function exibirFeedback(mensagem, tipo) {
-    var feedbackMessage = document.getElementById('feedbackMessage');
-    feedbackMessage.innerHTML = mensagem;
-    feedbackMessage.className = 'alert alert-' + tipo; // Definir classe de Bootstrap para sucesso ou erro
-    feedbackMessage.style.display = 'block'; // Mostrar a mensagem
-    feedbackMessage.setAttribute('aria-live', 'polite'); // Para acessibilidade
-}
 
 // Função para validar campos do formulário
 function validarCampos(nome, rg, cpf, logradouro, cep, telefone, email, senha, tipo) {
@@ -35,16 +27,16 @@ document.getElementById('cadastroForm').addEventListener('submit', function(even
     event.preventDefault();
 
     // Obtenção dos valores dos campos
-    var nome = document.getElementById('nome').value;
-    var rg = document.getElementById('rg').value;
-    var cpf = document.getElementById('cpf').value;
-    var logradouro = document.getElementById('logradouro').value;
-    var numero = document.getElementById('numero') ? document.getElementById('numero').value : null; // Tratamento para o número, se existir
-    var cep = document.getElementById('cep').value;
-    var tipo = document.getElementById('tipo').value; // 'tipo_usuario'
-    var email = document.getElementById('email').value;
-    var telefone = document.getElementById('telefone').value;
-    var senha = document.getElementById('senha').value; // 'password'
+    let nome = document.getElementById('nome').value;
+    let rg = document.getElementById('rg').value;
+    let cpf = document.getElementById('cpf').value;
+    let logradouro = document.getElementById('logradouro').value;
+    let numero = document.getElementById('numero') ? document.getElementById('numero').value : null; // Tratamento para o número, se existir
+    let cep = document.getElementById('cep').value;
+    let tipo = document.getElementById('tipo').value; // 'tipo_usuario'
+    let email = document.getElementById('email').value;
+    let telefone = document.getElementById('telefone').value;
+    let senha = document.getElementById('senha').value; // 'password'
 
     var numeroHabilitacao = document.getElementById('numeroHabilitacao').value || null;
     var certificacoes = document.getElementById('certificacoes').value || null;
@@ -55,8 +47,8 @@ document.getElementById('cadastroForm').addEventListener('submit', function(even
     }
 
     // Criação do objeto de usuário para enviar ao backend
-    var usuario = {
-        nome: nome,
+    let usuario = {
+        username: nome,
         rg: rg,
         cpf: cpf,
         logradouro: logradouro,
@@ -90,13 +82,23 @@ document.getElementById('cadastroForm').addEventListener('submit', function(even
         }
     })
     .then(data => {
-        // Exibir mensagem de sucesso
-        exibirFeedback('Usuário cadastrado com sucesso!', 'success');
-        document.getElementById('cadastroForm').reset(); // Limpa o formulário
-        document.getElementById('feedbackMessage').style.display = 'none'; // Esconde a mensagem após o sucesso
+       alerta()
+        document.getElementById('cadastroForm').reset(); 
     })
     .catch(error => {
-        // Exibir mensagem de erro
-        exibirFeedback('Erro no cadastro: ' + error.message, 'danger');
+       
     });
 });
+
+
+
+/*Função de alerta e redireicionar para proxima página*/ 
+function alerta() {
+    const alerta = document.getElementById("alerta");
+    if (alerta.style.display === "none" || alerta.style.display === "") {
+        alerta.style.display = "block";
+
+        setTimeout(()=>{
+            alerta.style.display="none"}, 5000)
+    }
+}

@@ -3,7 +3,7 @@ from django.urls import path
 from .views import Cadastrar, Login, cadastros, Cadastrar, Login_acessar
 
 urlpatterns = [
-    path('login/', Login, name="login"),#URL tela Login
+    path('', Login, name="login"),#URL tela Login
     path('cadastros/', cadastros, name="cadastros"), #URL tela cadastros
     path('Cadastrar/', Cadastrar, name="Cadastrar"), #URL para cadastrar
     path('login_acessar/', Login_acessar, name= "login_acessar") #URL para logar

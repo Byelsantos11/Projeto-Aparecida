@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
@@ -8,30 +8,56 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/css/stylesCadastro.css">
-
-    </head>
+</head>
 <body>
     <div class="container">
-        <h2 class="text-center mb-4"> Cadastro</h2>
+        <h2 class="text-center mb-4">Cadastro</h2>
+
+        <!-- Área de feedback visual -->
+        <div id="feedbackMessage" class="alert" role="alert" style="display: none;"></div>
 
         <!-- Formulário de cadastro -->
         <form id="cadastroForm">
             <!-- Nome -->
             <div class="form-group">
                 <label for="nome">Nome</label>
-                <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" required>
             </div>
 
-            <!-- Documento -->
+            <!-- Documento RG -->
             <div class="form-group">
-                <label for="documento">Documento</label>
-                <input type="text" class="form-control" id="documento" placeholder="Digite seu documento" required>
+                <label for="rg">RG</label>
+                <input type="text" class="form-control" id="rg" name="rg" placeholder="Digite seu RG" required>
+            </div>
+
+            <!-- Documento CPF -->
+            <div class="form-group">
+                <label for="cpf">CPF</label>
+                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite seu CPF" required>
+            </div>
+
+            <!-- Endereço: Logradouro -->
+            <div class="form-group">
+                <label for="logradouro">Logradouro</label>
+                <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="Digite seu logradouro" required>
+            </div>
+
+            <!-- CEP -->
+            <div class="form-group">
+                <label for="cep">CEP</label>
+                <input type="text" class="form-control" id="cep" name="cep" placeholder="Digite seu CEP" required>
+            </div>
+
+            <!-- Telefone -->
+            <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="tel" class="form-control" name="telefone" id="telefone" placeholder="Digite seu telefone" required>
             </div>
 
             <!-- Tipo de usuário -->
             <div class="form-group">
                 <label for="tipo">Tipo de Usuário</label>
-                <select class="form-control" id="tipo" required>
+                <select class="form-control" id="tipo" name="tipo" required>
                     <option value="">Selecione...</option>
                     <option value="passageiro">Passageiro</option>
                     <option value="coordenador">Coordenador</option>
@@ -39,14 +65,8 @@
                 </select>
             </div>
 
-            <!-- Informações adicionais para Passageiros -->
-            <div id="acompanhantes" class="form-group">
-                <label for="quantidadeAcompanhantes">Quantidade de Acompanhantes</label>
-                <input type="number" class="form-control" name="quantidadeAcompanhantes" id="quantidadeAcompanhantes" placeholder="Digite a quantidade de acompanhantes">
-            </div>
-
             <!-- Informações adicionais para Motoristas -->
-            <div id="motorista-info">
+            <div id="motorista-info" style="display: none;">
                 <div class="form-group">
                     <label for="numeroHabilitacao">Número da Habilitação</label>
                     <input type="text" class="form-control" name="numeroHabilitacao" id="numeroHabilitacao" placeholder="Digite o número da habilitação">
@@ -63,16 +83,10 @@
                 <input type="email" class="form-control" name="email" id="email" placeholder="Digite seu email" required>
             </div>
 
-             <!-- Senha -->
-             <div class="form-group">
-                <label for="senha">Senha</label>
-                <input type="senha" class="form-control" name="password" id="email" placeholder="Digite sua senha" required>
-            </div>
-
-            <!-- Telefone -->
+            <!-- Senha -->
             <div class="form-group">
-                <label for="telefone">Telefone</label>
-                <input type="tel" class="form-control" name="telefone" id="telefone" placeholder="Digite seu telefone" required>
+                <label for="senha">Senha</label>
+                <input type="password" class="form-control" name="password" id="senha" placeholder="Digite sua senha" required>
             </div>
 
             <!-- Botão de envio -->
@@ -85,8 +99,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-
-    <script src="../static/js/ScriptCadastro.js"></script>
-
+    <script src="../static/js/cadastrar.js"></script>
 </body>
 </html>

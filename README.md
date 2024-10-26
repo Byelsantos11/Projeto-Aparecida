@@ -22,4 +22,4 @@ Siga este passo a passo para configurar o projeto em sua máquina local:
    Link: https://github.com/Byelsantos11/Projeto-Aparecida.git
    git clone: https://github.com/Byelsantos11/Projeto-Aparecida.git
    cd (Pasta do projeto)
-   Assim você ja consegui acessar nosso código fonte!
+   Assim você já consegue acessar nosso código fonte!

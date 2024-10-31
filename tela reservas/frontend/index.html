@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Reserva de Assentos - Aparecida</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Reserva de Assentos - Aparecida</h1>
+        <p>Reserve seu assento para uma viagem inesquecível!</p>
+    </header>
+    <main>
+        <section class="assento-container">
+            <h2>Escolha seu assento</h2>
+            <div class="onibus" role="grid">
+                <!-- Fileiras de assentos -->
+                <div class="fileira" role="row">
+                    <button class="assento" data-assento="A1" aria-label="Assento A1">A1</button>
+                    <button class="assento" data-assento="A2" aria-label="Assento A2">A2</button>
+                    <div class="corredor" aria-hidden="true"></div>
+                    <button class="assento" data-assento="A3" aria-label="Assento A3">A3</button>
+                    <button class="assento" data-assento="A4" aria-label="Assento A4">A4</button>
+                </div>
+                <!-- Repita para outras fileiras -->
+                <div class="fileira" role="row">
+                    <button class="assento" data-assento="B1" aria-label="Assento B1">B1</button>
+                    <button class="assento ocupado" data-assento="B2" aria-label="Assento B2">B2</button>
+                    <div class="corredor" aria-hidden="true"></div>
+                    <button class="assento" data-assento="B3" aria-label="Assento B3">B3</button>
+                    <button class="assento" data-assento="B4" aria-label="Assento B4">B4</button>
+                </div>
+                <div class="fileira" role="row">
+                    <button class="assento" data-assento="C1" aria-label="Assento C1">C1</button>
+                    <button class="assento" data-assento="C2" aria-label="Assento C2">C2</button>
+                    <div class="corredor" aria-hidden="true"></div>
+                    <button class="assento" data-assento="C3" aria-label="Assento C3">C3</button>
+                    <button class="assento" data-assento="C4" aria-label="Assento C4">C4</button>
+                </div>
+                <div class="fileira" role="row">
+                    <button class="assento" data-assento="D1" aria-label="Assento D1">D1</button>
+                    <button class="assento" data-assento="D2" aria-label="Assento D2">D2</button>
+                    <div class="corredor" aria-hidden="true"></div>
+                    <button class="assento" data-assento="D3" aria-label="Assento D3">D3</button>
+                    <button class="assento" data-assento="D4" aria-label="Assento D4">D4</button>
+                </div>
+                <div class="fileira" role="row">
+                    <button class="assento" data-assento="E1" aria-label="Assento E1">E1</button>
+                    <button class="assento ocupado" data-assento="E2" aria-label="Assento E2">E2</button>
+                    <div class="corredor" aria-hidden="true"></div>
+                    <button class="assento" data-assento="E3" aria-label="Assento E3">E3</button>
+                    <button class="assento" data-assento="E4" aria-label="Assento E4">E4</button>
+                </div>
+                <div class="fileira" role="row">
+                    <button class="assento" data-assento="F1" aria-label="Assento F1">F1</button>
+                    <button class="assento" data-assento="F2" aria-label="Assento F2">F2</button>
+                    <div class="corredor" aria-hidden="true"></div>
+                    <button class="assento ocupado" data-assento="F3" aria-label="Assento F3">F3</button>
+                    <button class="assento" data-assento="F4" aria-label="Assento F4">F4</button>
+                </div>
+                <div class="fileira" role="row">
+                    <button class="assento" data-assento="G1" aria-label="Assento G1">G1</button>
+                    <button class="assento" data-assento="G2" aria-label="Assento G2">G2</button>
+                    <div class="corredor" aria-hidden="true"></div>
+                    <button class="assento" data-assento="G3" aria-label="Assento G3">G3</button>
+                    <button class="assento" data-assento="G4" aria-label="Assento G4">G4</button>
+                </div>
+                <div class="fileira" role="row">
+                    <button class="assento" data-assento="H1" aria-label="Assento H1">H1</button>
+                    <button class="assento ocupado" data-assento="H2" aria-label="Assento H2">H2</button>
+                    <div class="corredor" aria-hidden="true"></div>
+                    <button class="assento" data-assento="H3" aria-label="Assento H3">H3</button>
+                    <button class="assento" data-assento="H4" aria-label="Assento H4">H4</button>
+                </div>
+                <div class="fileira" role="row">
+                    <button class="assento" data-assento="I1" aria-label="Assento I1">I1</button>
+                    <button class="assento" data-assento="I2" aria-label="Assento I2">I2</button>
+                    <div class="corredor" aria-hidden="true"></div>
+                    <button class="assento" data-assento="I3" aria-label="Assento I3">I3</button>
+                    <button class="assento" data-assento="I4" aria-label="Assento I4">I4</button>
+                </div>
+            </div>
+            <button class="reservar-btn" aria-label="Reservar Assento">Reservar Assento</button>
+            <div class="informacoes">
+                <p><span class="assento ocupado"></span> Assento Ocupado</p>
+                <p><span class="assento"></span> Assento Livre</p>
+            </div>
+            <div class="mensagem" id="mensagem" role="alert"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 - Sistema de Viagens Aparecida</p>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>

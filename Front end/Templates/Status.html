@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status da Reserva</title>
+    <link rel="stylesheet" href="../Static/CSS/Status.css">
+</head>
+<body>
+
+<header>
+    <h1>Status da Reserva</h1>
+</header>
+
+<main id="main-content">
+    <section id="detalhes-reserva">
+        <h2>Detalhes da Reserva</h2>
+        <div id="reserva-info">
+            <p><strong>Ônibus:</strong> <span id="onibus">Executivo</span></p>
+            <p><strong>Poltrona:</strong> <span id="poltrona">12B</span></p>
+            <p><strong>Data:</strong> <span id="data-reserva">25/12/2024</span></p>
+            <p><strong>Horário:</strong> <span id="horario">10:00 AM</span></p>
+            <p><strong>Valor:</strong> <span id="valor">R$ 250,00</span></p>
+        </div>
+
+        <button id="confirmar-reserva-btn">Confirmar Reserva</button>
+        <button id="cancelar-btn">Cancelar Reserva</button>
+    </section>
+
+    <!-- Modal de confirmação de cancelamento -->
+    <div id="modal-cancelamento" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <h2>Confirmar Cancelamento</h2>
+            <p>Tem certeza de que deseja cancelar sua reserva? Esta ação não pode ser desfeita.</p>
+            <button id="confirmar-cancelamento">Confirmar Cancelamento</button>
+            <button id="cancelar-cancelamento">Voltar</button>
+        </div>
+    </div>
+</main>
+
+<script src="../Static/JS/Status.jsSSSSSSS"></script>
+</body>
+</html>

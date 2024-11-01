@@ -1,0 +1,119 @@
+body {
+    font-family: 'Cabin', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: #1A1F3D; /* Azul-marinho de fundo */
+    color: #FFFFFF;
+}
+
+header {
+    margin-top: 20px;
+    color: #FFD700; /* Dourado */
+    font-size: 2em;
+}
+
+h1, h2 {
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+#detalhes-reserva {
+    width: 90%;
+    max-width: 500px;
+    background-color: #ffffff;
+    color: #1A1F3D; /* Azul-marinho */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+#detalhes-reserva h2 {
+    color: #FFD700; /* Dourado */
+    margin-bottom: 10px;
+}
+
+#reserva-info p {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #1A1F3D; /* Azul-marinho */
+    color: #FFD700; /* Dourado */
+    padding: 12px 20px;
+    border: 2px solid #FFD700;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 1em;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #FFD700; /* Dourado ao passar o mouse */
+    color: #1A1F3D; /* Azul-marinho */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(26, 31, 61, 0.9); /* Fundo azul-marinho com transparência */
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    color: #1A1F3D;
+}
+
+.close {
+    color: #888;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #333;
+}
+
+#confirmar-cancelamento,
+#cancelar-cancelamento {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#confirmar-cancelamento {
+    background-color: #d9534f;
+    color: #ffffff;
+}
+
+#cancelar-cancelamento {
+    background-color: #5bc0de;
+    color: #ffffff;
+}

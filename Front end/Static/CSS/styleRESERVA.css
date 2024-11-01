@@ -1,0 +1,158 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #FFD700; /* Azul claro */
+    color: #ecf0f1;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    color: #34495e;
+}
+
+.informacoes {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.informacoes p {
+    margin: 5px 0;
+}
+
+.informacoes .assento {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+}
+
+.informacoes .assento.ocupado {
+    background-color: #e74c3c; /* Vermelho para ocupados */
+}
+
+.assento-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+}
+
+.onibus {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.fileira {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.assento {
+    background-color: #2ecc71; /* Verde para disponíveis */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    position: relative;
+}
+
+.assento:hover {
+    background-color: #27ae60;
+    transform: scale(1.05);
+}
+
+.assento.ocupado {
+    background-color: #e74c3c; /* Vermelho para ocupados */
+    cursor: not-allowed;
+}
+
+.assento.ocupado:hover {
+    background-color: #c0392b;
+    transform: none;
+}
+
+.assento.selecionado {
+    animation: pulse 0.5s ease;
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.6); /* Efeito de brilho ao selecionar */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.corredor {
+    width: 30px;
+    height: 50px;
+    background-color: #bdc3c7;
+}
+
+.reservar-btn {
+    background-color: #3498db;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: block;
+    margin: 20px auto 0;
+}
+
+.reservar-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #3498db; /* Azul claro */
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.mensagem {
+    margin-top: 15px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+.assento.reservado {
+    background-color: red;
+    color: white;
+}

@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin|Quicksand:700');
+
+p, input, li {
+  font-family: 'Cabin', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, button {
+  font-family: 'Quicksand', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#nav-bar, 
+#page-logo, 
+#nav-links, 
+.feature, 
+#carousel, 
+#prices,
+footer,
+#footer-links,
+#footer-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#header {
+  width: 100%;
+  margin-left: -12px;
+  margin-top: -19px;
+  padding: 10px 10px;
+  position: fixed;
+  z-index: 1;
+}
+
+.opacity-up {
+  background-color: #FFD700;
+}
+
+#main .opacity-up {
+  background-color: #FFD700;
+  visibility: visible;
+}
+
+.opacity-down {
+  background-color: #FFD700;
+}
+
+#main .opacity-down {
+  background-color: rgba(215, 215, 215, 0);
+  visibility: hidden;
+}
+
+.opacity-up, .opacity-down {
+  transition: background-color 1.3s;
+}
+
+#main .opacity-down, #main .opacity-up {
+  transition: background-color 250ms;
+}
+
+#nav-bar {
+  margin-top: -5px;
+  flex-direction: column;
+}
+
+#page-title {
+  font-size: 30px;
+  padding-left: 7px;
+}
+
+#nav-links hr {
+  height: 20px;
+}
+
+.nav-link {
+  padding: 0 15px 0 15px;
+  color: black;
+  font-size: 17px;
+}
+
+#nav-margin {
+  padding-top: 139px;
+}
+
+body {
+  width: 100%;
+  margin-left: -8px;
+  padding-left: 8px;
+}
+
+#main {
+  width: 100%;
+}
+
+#register {
+  background: url('https://www.solidstatelogic.com/sites/default/files/SSL_houseOfRock_ControlRoom02_web.jpg') no-repeat center;
+}
+
+#form {
+  text-align: center;
+  background-color: rgba(0,0,0,0.6);
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
+#form h2 {
+  font-size: 1.7em;
+  margin-bottom: -95px;
+  height: 150px;
+  color: white;
+}
+
+#email {
+  margin-bottom: 15px;
+  width: 225px;
+  font-size: .9em;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 4px 8px 4px;
+}
+
+#submit {
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: .9em;
+  padding: 5px;
+  transition: background-color 500ms;
+  cursor: pointer;
+}
+
+#submit:active {
+  background-color: lightgray;
+}
+
+#features {
+  margin-top: 10px;
+}
+
+#features hr {
+  margin: 20px 30px 20px 30px;
+  border-color: #eee;
+}
+
+.feature {
+  margin-top: 15px;
+  flex-direction: column;
+  text-align: center;
+}
+
+.feature h1 {
+  margin-top: 4px;
+  margin-bottom: -7px;
+}
+
+#prices {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  flex-direction: column;
+}
+
+.price {
+  text-align: center;
+  width: 200px;
+  border: solid 3px black; 
+  margin: 20px 0 20px 0;
+}
+
+.price h3 {
+  margin-top: 0;
+  color: white;
+  background-color: black;
+  width: 100%;
+}
+
+.price h1 {
+  margin: -15px 0 -5px 0;
+  font-size: 2em;
+}
+
+.price ul {
+  text-align: left;
+}
+
+.price button {
+  padding: 5px 10px 5px 10px;
+  border: none;
+  font-size: 1em;
+  margin-bottom: 10px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+#go-up {
+  position: fixed;
+  top: 85%;
+  left: 30px;
+  border-radius: 100%;
+  padding: 20px;  
+  cursor: pointer;
+}
+
+footer {
+    flex-direction: column;
+    background-color: #FFD700;
+    align-items: center;
+  }
+  
+  #footer-links a b p {
+    padding: 0 6.5px 0 6.5px;
+    font-size: 15px;
+    color: black;
+    margin-top: 15px;  
+  }
+  
+  footer hr {
+    width: 3px;
+    margin: 0 6.5px 0 6.5px;
+  }
+  
+  #footer-logos {
+    text-align: center; 
+    margin-bottom: 20px;
+  }
+  
+  #footer-logos hr {
+    margin-right: 13px;
+    margin-left: 13px;
+    border-size: 2px;
+  }
+  
+  footer p {
+    margin-top: -5px;
+    color: #666;
+  }
+  
+  /* Estilos do Carrossel 3D */
+  #drag-container, #spin-container {
+    position: relative;
+    display: flex;
+    margin: auto;
+    transform-style: preserve-3d;
+    transform: rotateX(-10deg);
+  }
+  
+  #drag-container img, #drag-container video {
+    transform-style: preserve-3d;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 8px #fff;
+    box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
+  }
+  
+  #drag-container img:hover, #drag-container video:hover {
+    box-shadow: 0 0 15px #fffd;
+    box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
+  }
+  
+  #drag-container p {
+    font-family: Serif;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotateX(90deg);
+    color: #fff;
+  }
+  
+  #ground {
+    width: 900px;
+    height: 900px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotateX(90deg);
+    background: radial-gradient(center center, farthest-side, #9993, transparent);
+  }
+  
+  @keyframes spin {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+  }
+  
+  @keyframes spinRevert {
+    from { transform: rotateY(360deg); }
+    to { transform: rotateY(0deg); }
+  }
+  
+  @media (min-width: 700px) {
+    #nav-bar {
+      margin-left: 14px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    
+    #nav-margin {
+      padding-top: 85px;
+    }
+      
+    #form {
+      padding-top: 30px;
+      padding-bottom: 60px;
+    }
+    
+    #form h2 {
+      font-size: 2.5em;
+    }
+    
+    #email {
+      margin-top: 40px;
+      margin-bottom: 25px;
+    }
+      
+    #features hr {
+      margin: 0 200px 0 200px;
+    }
+    
+    .feature {
+      display: grid;
+      margin-top: 25px;
+      margin-bottom: 20px;
+      grid-template-columns: 1fr 3fr;
+    }
+    
+    .feature img {
+      justify-self: end;
+    }
+    
+    .feature div {
+      justify-self: start;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      margin: 0 40px 0 40px;
+    }
+    
+    #carousel {
+      width: 550px;
+      height: 420px;
+      margin: auto; /* Centraliza o carrossel */
+    }
+    
+    #prices {
+      display: grid;
+      grid-template-columns: 200px 200px 200px;
+      justify-items: center;
+      grid-gap: 40px;
+    }
+  }
+  
+  @media (min-width: 1086px) {
+    #form {
+      padding-top: 60px;
+      padding-bottom: 120px;
+    }
+    
+    #form h2 {
+      font-size: 4em;
+    }
+    
+    #email {
+      margin-top: 95px;
+      width: 350px;
+    }
+    #form #submit, #email {
+        font-size: 1.25em;
+      }
+      
+      #features hr {
+        margin: 0 300px 0 300px;
+      }
+      
+      #prices {
+        display: grid;
+        grid-template-columns: 270px 270px 270px;
+        justify-items: center;
+        grid-gap: 40px;
+      }
+      
+      .price {
+        height: 100%;
+        width: 100%;
+      }
+      
+      .price h3 {
+        font-size: 30px;
+      }
+      
+      .price h1 {
+        font-size: 50px;
+      }
+      
+      .price ul {
+        font-size: 17px;
+        margin-left: 46px;
+      }
+      #form #submit, #email {
+        font-size: 1.25em;
+      }
+      
+      #features hr {
+        margin: 0 300px 0 300px;
+      }
+      
+      #prices {
+        display: grid;
+        grid-template-columns: 270px 270px 270px;
+        justify-items: center;
+        grid-gap: 40px;
+      }
+      
+      .price {
+        height: 100%;
+        width: 100%;
+      }
+      
+      .price h3 {
+        font-size: 30px;
+      }
+      
+      .price h1 {
+        font-size: 50px;
+      }
+      
+      .price ul {
+        font-size: 17px;
+        margin-left: 46px;
+      }
+

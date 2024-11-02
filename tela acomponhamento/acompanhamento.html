@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acompanhamento de Reservas - Aparecida</title>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+    <header>
+        <h1>Acompanhamento de Reservas</h1>
+    </header>
+
+    <main>  
+        <section class="acompanhamento-container">
+            <h2>Suas Reservas</h2>
+            <p id="nome-ordenador">Ordenador responsável: <strong>[Nome do Ordenador]</strong></p> <!-- Parágrafo adicionado -->
+            <button id="voltar-reservas-btn">Voltar para a Tela de Reservas</button> 
+            <table>
+                <thead>
+                    <tr>
+                        <th>Assento</th>
+                        <th>Nome</th>
+                        <th>Data da Reserva</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="reservas-lista">
+                    <!-- Reservas serão carregadas aqui -->
+                </tbody>
+            </table>
+            <div class="mensagem" id="mensagem" role="alert" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 - Sistema de Viagens Aparecida</p>
+    </footer>
+
+    <script src="js/acompanhamento.js" defer></script>
+</body>
+</html>

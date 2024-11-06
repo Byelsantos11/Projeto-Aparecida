@@ -11,8 +11,9 @@ Um sistema desenvolvido para atender às necessidades das igrejas, facilitando o
 - 🚀 Bootstrap
 
 ### Back-end
-- 🐍 Python
-- 🦄 Django
+- ☕ Java
+- 🌱 Spring Boot
+
 
 ## 📦 Instalação
 
@@ -22,4 +23,4 @@ Siga este passo a passo para configurar o projeto em sua máquina local:
    Link: https://github.com/Byelsantos11/Projeto-Aparecida.git
    git clone: https://github.com/Byelsantos11/Projeto-Aparecida.git
    cd (Pasta do projeto)
-   Assim você já consegue acessar nosso código fonte!
+   Assim você ja consegui acessar nosso código fonte!

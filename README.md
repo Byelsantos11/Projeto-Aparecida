@@ -11,8 +11,9 @@ Um sistema desenvolvido para atender às necessidades das igrejas, facilitando o
 - 🚀 Bootstrap
 
 ### Back-end
-- 🐍 Python
-- 🦄 Django
+- ☕ Java
+- 🌱 Spring Boot
+
 
 ## 📦 Instalação
 

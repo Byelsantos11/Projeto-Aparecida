@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios e Estatísticas</title>
+    <link rel="stylesheet" href="css/stylesrelatorio.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Relatórios e Estatísticas de Reservas</h1>
+        </header>
+
+        <div id="filtro-detalhes">
+            <input type="date" id="dataInicio" placeholder="Data de Início" />
+            <input type="date" id="dataFim" placeholder="Data de Fim" />
+            <select id="statusReserva">
+                <option value="">Status</option>
+                <option value="confirmado">Confirmado</option>
+                <option value="pendente">Pendente</option>
+                <option value="cancelado">Cancelado</option>
+            </select>
+            <button id="btn-filtrar"><i class="fas fa-filter"></i> Filtrar</button>
+        </div>
+
+        <div class="estatisticas-box">
+            <div class="estatistica">
+                <p>Total de Reservas</p>
+                <span id="total-reservas">0</span>
+            </div>
+            <div class="estatistica">
+                <p>Assentos Disponíveis</p>
+                <span id="assentos-disponiveis">0</span>
+            </div>
+            <div class="estatistica">
+                <p>Assentos Ocupados</p>
+                <span id="assentos-ocupados">0</span>
+            </div>
+        </div>
+
+        <div class="grafico-container">
+            <canvas id="graficoEstatisticas"></canvas>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID da Reserva</th>
+                    <th>Assento</th>
+                    <th>Status</th>
+                    <th>Data de Criação</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-reservas"></tbody>
+        </table>
+    </div>
+
+    <script src="js/relatorios.js"></script>
+</body>
+</html>

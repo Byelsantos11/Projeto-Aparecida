@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário - Aparecida</title>
+    <link rel="stylesheet" href="css/style-perfil.css">
+</head>
+<body>
+    <header>
+        <h1>Perfil do Usuário</h1>
+    </header>
+
+    <main>
+        <section class="informacoes-pessoais">
+            <h2>Informações Pessoais</h2>
+            <p>Nome: <span id="nome-usuario">Nome do Usuário</span></p>
+            <p>Email: <span id="email-usuario">usuario@example.com</span></p>
+            <button id="editar-informacoes">Editar Informações</button>
+            <div id="editar-informacoes-form" style="display: none;">
+                <input type="text" id="novo-nome" placeholder="Novo Nome" required>
+                <input type="email" id="novo-email" placeholder="Novo Email" required>
+                <button id="salvar-edicao">Salvar Alterações</button>
+                <button id="cancelar-edicao">Cancelar</button>
+            </div>
+        </section>
+
+        <section class="historico-reservas">
+            <h2>Histórico de Reservas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Assento</th>
+                        <th>Data</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="historico-lista"></tbody>
+            </table>
+        </section>
+
+        <section class="metodos-pagamento">
+            <h2>Métodos de Pagamento</h2>
+            <p>Cartão de Crédito: <span id="cartao-pagamento">**** **** **** 1234</span></p>
+            <button id="gerenciar-pagamento">Gerenciar Métodos de Pagamento</button>
+            <div id="alterar-cartao-form" style="display: none;">
+                <input type="text" id="novo-cartao" placeholder="Novo Cartão de Crédito" required>
+                <button id="salvar-cartao">Salvar Cartão</button>
+                <button id="cancelar-cartao">Cancelar</button>
+            </div>
+        </section>
+
+        <button id="voltar" class="botao-voltar">Voltar</button>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 - Sistema de Viagens Aparecida</p>
+    </footer>
+
+    <script src="js/perfil.js"></script>
+</body>
+</html>

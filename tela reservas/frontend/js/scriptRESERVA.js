@@ -61,3 +61,34 @@ document.querySelector('.reservar-btn').addEventListener('click', async () => {
         indicadorCarregamento.remove(); // Remove o indicador de carregamento
     }
 });
+ // assim seria para buscar usuarios ainda em testes 
+async function searchUser() {
+    const query = document.getElementById("searchUser").value.toLowerCase();
+    const userResults = document.getElementById("userResults");
+
+    if (!query) {
+        userResults.innerHTML = ''; // Se não houver nada na barra de pesquisa, limpa os resultados
+        return;
+    }
+
+    try {
+        const response = await fetch(`http://localhost:3000/api/usuarios/pesquisar?nome=${query}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+        
+            userResults.innerHTML = data.users.map(user => `<p>${user.nome}</p>`).join('');
+        } else {
+            const errorMessage = data.message || 'Erro ao buscar usuários.';
+            alert('Erro: ' + errorMessage);
+        }
+    } catch (error) {
+        console.error('Erro ao fazer a busca de usuários:', error);
+        alert('Erro ao fazer a busca de usuários.');
+    }
+}

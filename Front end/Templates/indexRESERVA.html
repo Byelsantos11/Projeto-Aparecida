@@ -4,14 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Reserva de Assentos - Aparecida</title>
-    <link rel="stylesheet" href="../Static/CSS/styleRESERVA.css">
+    <link rel="stylesheet" href="Front end\Static\CSS\styleRESERVA.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
         <h1>Sistema de Reserva de Assentos - Aparecida</h1>
         <p>Reserve seu assento para uma viagem inesquecível!</p>
     </header>
+    
+    <!-- Botão para voltar ao início -->
+    <button id="voltar-inicio-btn" style="position: absolute; top: 10px; left: 10px;">Voltar para o Início</button>
+
     <main>
+        <!-- Barra de pesquisa posicionada antes das fileiras de assentos -->
+        <div class="search-container">
+            <input type="text" id="searchUser" placeholder="Pesquisar usuário..." oninput="searchUser()">
+        </div>
+        <div id="userResults">
+            <!-- Resultados da pesquisa serão exibidos aqui -->
+        </div>
+
         <section class="assento-container">
             <h2>Escolha seu assento</h2>
             <div class="onibus" role="grid">
@@ -88,11 +101,35 @@
             </div>
             <div class="mensagem" id="mensagem" role="alert"></div>
         </section>
+
+        <!-- Botão para ir à tela de acompanhamento -->
+        <div class="navegacao">
+            <button id="acompanhamento-btn">Ver Acompanhamento de Reservas</button>
+        </div>
     </main>
+    
     <footer>
-        <p>&copy; 2024 - Rota Aparecida</p>
+        <p>&copy; 2024 - Sistema de Viagens Aparecida</p>
     </footer>
 
-    <script src="../Static/JS/scriptRESERVA.js" defer></script>
+    <section id="acompanhamento-reservas" style="display: none;">
+        <h2>Acompanhamento de Reservas</h2>
+        <button id="mostrar-reservas-btn">Ver Reservas</button> <!-- Botão adicionado com ID -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Assento</th>
+                    <th>Nome</th>
+                    <th>Data da Reserva</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="reservas-lista">
+                <!-- As reservas serão inseridas aqui -->
+            </tbody>
+        </table>
+    </section>
+
+    <script src="js/scriptRESERVA.js" defer></script>
 </body>
 </html>

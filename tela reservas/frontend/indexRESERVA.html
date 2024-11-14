@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Reserva de Assentos - Aparecida</title>
     <link rel="stylesheet" href="css/styleRESERVA.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
@@ -16,6 +17,14 @@
     <button id="voltar-inicio-btn" style="position: absolute; top: 10px; left: 10px;">Voltar para o Início</button>
 
     <main>
+        <!-- Barra de pesquisa posicionada antes das fileiras de assentos -->
+        <div class="search-container">
+            <input type="text" id="searchUser" placeholder="Pesquisar usuário..." oninput="searchUser()">
+        </div>
+        <div id="userResults">
+            <!-- Resultados da pesquisa serão exibidos aqui -->
+        </div>
+
         <section class="assento-container">
             <h2>Escolha seu assento</h2>
             <div class="onibus" role="grid">

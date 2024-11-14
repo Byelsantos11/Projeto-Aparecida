@@ -6,25 +6,29 @@ body {
 }
 
 header {
-    background-color: #3498db; /* Azul claro */
-    color: #ecf0f1;
+    background-color: #e67e22; /* Laranja vibrante */
+    color: white;
     padding: 20px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     margin: 0;
+    font-size: 30px;
 }
 
 h2 {
     text-align: center;
     color: #34495e;
+    font-size: 24px;
 }
 
 .informacoes {
     margin-top: 20px;
     text-align: center;
     font-size: 14px;
+    color: #34495e;
 }
 
 .informacoes p {
@@ -119,7 +123,7 @@ h2 {
 }
 
 .reservar-btn {
-    background-color: #3498db;
+    background-color: #e67e22; /* Laranja vibrante */
     border: none;
     color: white;
     padding: 15px 30px;
@@ -132,14 +136,14 @@ h2 {
 }
 
 .reservar-btn:hover {
-    background-color: #2980b9;
+    background-color: #d35400; /* Laranja mais escuro */
     transform: scale(1.05);
 }
 
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #3498db; /* Azul claro */
+    background-color: #e67e22; /* Laranja vibrante */
     color: white;
     position: relative;
     bottom: 0;
@@ -151,11 +155,17 @@ footer {
     font-size: 16px;
     text-align: center;
     font-weight: bold;
+    color: #e67e22;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
 }
+
 .assento.reservado {
     background-color: red;
     color: white;
 }
+
 #acompanhamento-reservas {
     background-color: #f9f9f9;
     padding: 20px;
@@ -175,16 +185,17 @@ footer {
 }
 
 #acompanhamento-reservas th {
-    background-color: #4CAF50;
+    background-color: #e67e22; /* Laranja vibrante */
     color: white;
 }
+
 .navegacao {
     text-align: center; /* Centraliza o conteúdo */
     margin-top: 20px; /* Espaço acima do botão */
 }
 
 .navegacao button {
-    background-color: #e67e22; /* Cor laranja vibrante */
+    background-color: #e67e22; /* Laranja vibrante */
     color: white; /* Texto branco */
     padding: 15px 25px; /* Espaçamento interno */
     font-size: 18px; /* Tamanho da fonte */
@@ -195,7 +206,7 @@ footer {
 }
 
 .navegacao button:hover {
-    background-color: #d35400; /* Cor mais escura ao passar o mouse */
+    background-color: #d35400; /* Laranja mais escuro */
     transform: scale(1.05); /* Efeito de aumento */
 }
 
@@ -203,40 +214,66 @@ footer {
     outline: none; /* Remove contorno padrão do foco */
     box-shadow: 0 0 5px rgba(255, 165, 0, 0.5); /* Efeito de destaque */
 }
+
 .assento.selecionado {
     border: 2px solid #2ecc71; /* Borda verde para assentos selecionados */
 }
 
-.mensagem {
-    color: #3498db;
-    background-color: #ecf0f1;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 15px;
-}
-.cancelar-btn {
-    background-color: #e74c3c;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+#voltar-inicio-btn {
+    background-color: #27ae60; /* Verde */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Cantos arredondados */
+    padding: 10px 15px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro */
+    position: absolute;
+    top: 10px;
+    left: 10px;
     transition: background-color 0.3s;
 }
-.cancelar-btn:hover {
-    background-color: #c0392b;
+
+#voltar-inicio-btn:hover {
+    background-color: #2ecc71; /* Verde mais escuro */
 }
-@media (max-width: 600px) {
-    .assento-container {
-        padding: 15px;
-        max-width: 90%;
-    }
-    .assento {
-        padding: 10px 15px;
-        margin: 5px;
-    }
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
 }
+
+#searchUser {
+    width: 300px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #ffa500;
+    border-radius: 25px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#searchUser::placeholder {
+    color: #888;
+}
+
+#searchUser:focus {
+    border-color: #ff8c00;
+    box-shadow: 0px 0px 10px rgba(255, 140, 0, 0.5);
+}
+
+.search-container:before {
+    content: "\f002";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: relative;
+    left: -30px;
+    color: #ffa500;
+    font-size: 18px;
+}
+
 #voltar-inicio-btn {
-    background-color: #4CAF50; /* Cor de fundo verde */
+    background-color: #e67e22; /* Cor de fundo laranja */
     color: white; /* Cor do texto */
     border: none; /* Sem borda */
     border-radius: 5px; /* Cantos arredondados */
@@ -250,5 +287,5 @@ footer {
 }
 
 #voltar-inicio-btn:hover {
-    background-color: #45a049; /* Cor de fundo ao passar o mouse */
+    background-color: #d35400; /* Cor de fundo laranja mais escuro ao passar o mouse */
 }

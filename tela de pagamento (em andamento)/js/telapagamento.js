@@ -1,42 +1,77 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const loadOrderSummary = async () => {
+        try {
+            const response = await fetch('/api/pedido');
+            const data = await response.json();
 
-document.getElementById('cpf-cnpj').addEventListener('input', function () {
-    let value = this.value.replace(/\D/g, '');
-    if (value.length <= 11) {
-        this.value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
-    } else {
-        this.value = value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
-    }
-});
+            const orderSummary = document.getElementById('order-summary');
+            const totalPrice = document.getElementById('total-price');
 
-document.getElementById('phone').addEventListener('input', function () {
-    let value = this.value.replace(/\D/g, '');
-    this.value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
-});
+            orderSummary.innerHTML = '';
 
-document.getElementById('cep').addEventListener('input', function () {
-    let value = this.value.replace(/\D/g, '');
-    this.value = value.replace(/(\d{5})(\d{3})/, '$1-$2');
-});
+            data.items.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${item.name} - ${item.quantity}x - R$ ${item.price.toFixed(2)}`;
+                orderSummary.appendChild(listItem);
+            });
 
+            totalPrice.innerHTML = `<strong>Total Final: R$ ${data.total.toFixed(2)}</strong>`;
 
-document.getElementById('confirm-payment').addEventListener('click', function (event) {
-    event.preventDefault();
-
-    const requiredFields = document.querySelectorAll('input[required]');
-    let isValid = true;
-
-    requiredFields.forEach((field) => {
-        const errorMsg = field.nextElementSibling;
-        if (!field.value.trim()) {
-            errorMsg.textContent = 'Este campo é obrigatório.';
-            errorMsg.style.display = 'block';
-            isValid = false;
-        } else {
-            errorMsg.style.display = 'none';
+        } catch (error) {
+            console.error('Erro ao carregar os dados do pedido:', error);
         }
-    });
+    };
 
-    if (isValid) {
-        alert('Pagamento confirmado! Obrigado pela sua compra.');
+    const handlePayment = async (event) => {
+        event.preventDefault();
+
+        const loadingSpinner = document.getElementById('loading-spinner');
+        loadingSpinner.classList.remove('hidden');
+
+        const paymentData = {
+            cardName: document.getElementById('card-name').value,
+            cardNumber: document.getElementById('card-number').value,
+            expiryDate: document.getElementById('expiry-date').value,
+            cvv: document.getElementById('cvv').value,
+            saveCard: document.getElementById('save-card').checked,
+            termsAccepted: document.getElementById('terms').checked
+        };
+
+        try {
+            const response = await fetch('/api/pagar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(paymentData)
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                window.location.href = '/confirmacao';
+            } else {
+                alert('Erro no pagamento. Tente novamente.');
+            }
+        } catch (error) {
+            console.error('Erro ao processar o pagamento:', error);
+            alert('Erro ao processar o pagamento. Tente novamente.');
+        } finally {
+            loadingSpinner.classList.add('hidden');
+        }
+    };
+
+    loadOrderSummary();
+
+    const paymentForm = document.getElementById('payment-form');
+    paymentForm.addEventListener('submit', handlePayment);
+
+    const backButton = document.getElementById('back-button');
+    if (backButton) {
+        backButton.addEventListener('click', function () {
+            window.location.href = 'telaendereco.html';
+        });
+    } else {
+        console.error('Botão "Voltar" não encontrado.');
     }
 });

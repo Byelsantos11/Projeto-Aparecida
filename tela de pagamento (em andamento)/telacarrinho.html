@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - Sistema de Viagens Aparecida</title>
+    <link rel="stylesheet" href="css/telapagamento.css">
+</head>
+<body>
+    <header>
+        <h1>Seu Carrinho</h1>
+        <div class="progress-bar">
+            <div class="step active">Carrinho</div>
+            <div class="step">Endereço</div>
+            <div class="step">Pagamento</div>
+            <div class="step">Confirmação</div>
+        </div>
+    </header>
+
+    <main>
+        <form id="cart-form">
+            <section>
+                <h2>Itens no Carrinho</h2>
+                <ul class="order-summary" id="order-summary">
+                  
+                </ul>
+                <p class="total"><strong>Total Final: R$ 0,00</strong></p>
+            </section>
+
+            <section>
+                <h2>Opções</h2>
+                <label>
+                    <input type="checkbox" id="add-insurance"> Adicionar seguro viagem (R$ 20,00)
+                </label>
+            </section>
+
+            <section class="actions">
+                <button type="button" id="continue-shopping" class="secondary-btn">Continuar Comprando</button>
+                <button type="submit" id="proceed-to-address">Prosseguir para Endereço</button>
+            </section>
+        </form>
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="privacy.html">Políticas de Privacidade</a></li>
+            <li><a href="terms.html">Termos de Uso</a></li>
+        </ul>
+    </footer>
+
+    <script src="js/telacarrinho.js"></script>
+</body>
+</html>

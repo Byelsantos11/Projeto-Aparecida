@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração - Coordenadores</title>
+    <link rel="stylesheet" href="css/style-admin.css">
+</head>
+<body>
+    <header>
+        <h1>Coordenadores</h1>
+        <nav>
+            <ul>
+                <li><a href="admin.html" aria-label="Ir para a página inicial">Início</a></li>
+                <li><a href="admin-pagamentos.html" aria-label="Ir para a página de pagamentos">Pagamentos</a></li>
+                <li><a href="admin-passageiros.html" aria-label="Ir para a página de passageiros">Passageiros</a></li>
+                <li><a href="admin-onibus.html" aria-label="Ir para a página de ônibus">Ônibus</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <button id="add-coordenador-btn" aria-label="Adicionar um novo coordenador">Adicionar Coordenador</button>
+     
+        <p id="loading-message" style="display: none;">Carregando coordenadores...</p>
+        <p id="error-message" style="display: none; color: red;">Erro ao carregar coordenadores. Tente novamente mais tarde.</p>
+        
+        <table id="coordenadores-tabela">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="coordenadores-tabela-corpo">
+             
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2024 Sistema de Viagens Aparecida. Todos os direitos reservados.</p>
+    </footer>
+
+
+<ul id="lista-coordenadores"></ul>
+
+    <script src="js/admin-coordenadores.js"></script>
+</body>
+</html>

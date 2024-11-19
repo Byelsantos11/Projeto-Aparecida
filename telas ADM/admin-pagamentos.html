@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração - Pagamentos</title>
+    <link rel="stylesheet" href="css/style-admin.css">
+</head>
+<body>
+    <header>
+        <h1>Pagamentos</h1>
+        <nav>
+            <ul>
+                <li><a href="admin.html" aria-label="Ir para a página inicial">Início</a></li>
+                <li><a href="admin-coordenadores.html" aria-label="Ir para a página de coordenadores">Coordenadores</a></li>
+                <li><a href="admin-passageiros.html" aria-label="Ir para a página de passageiros">Passageiros</a></li>
+                <li><a href="admin-onibus.html" aria-label="Ir para a página de ônibus">Ônibus</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <button id="add-pagamento-btn" aria-label="Adicionar um novo pagamento">Adicionar Pagamento</button>
+
+        <p id="loading-message" style="display: none;">Carregando pagamentos...</p>
+        <p id="error-message" style="display: none; color: red;">Erro ao carregar pagamentos. Tente novamente mais tarde.</p>
+        
+        <table id="pagamentos-tabela">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome do Passageiro</th>
+                    <th>Valor Pago</th>
+                    <th>Data</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="pagamentos-tabela-corpo">
+             
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2024 Sistema de Viagens Aparecida. Todos os direitos reservados.</p>
+    </footer>
+
+    
+<ul id="lista-pagamentos"></ul>
+
+    <script src="js/admin-pagamentos.js"></script>
+</body>
+</html>

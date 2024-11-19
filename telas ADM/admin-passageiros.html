@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração - Passageiros</title>
+    <link rel="stylesheet" href="css/style-admin.css">
+    <script defer src="js/admin-passageiros.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Administração do Sistema - Passageiros</h1>
+        <nav>
+            <ul>
+                <li><a href="admin.html" aria-label="Ir para a página inicial">Início</a></li>
+                <li><a href="admin-coordenadores.html" aria-label="Ir para a página de coordenadores">Coordenadores</a></li>
+                <li><a href="admin-pagamentos.html" aria-label="Ir para a página de pagamentos">Pagamentos</a></li>
+                <li><a href="admin-onibus.html" aria-label="Ir para a página de ônibus">Ônibus</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- Navegação de Passageiros para o Administrador -->
+        <section>
+            <h2>Passageiros</h2>
+            <!-- Campo de pesquisa com acessibilidade -->
+            <input type="text" id="pesquisar-passageiros" placeholder="Pesquisar passageiro..." aria-label="Pesquisar passageiros" />
+
+            <!-- Feedback de carregamento -->
+            <p id="loading-message" style="display: none;">Carregando passageiros...</p>
+            <p id="error-message" style="display: none; color: red;">Erro ao carregar passageiros. Tente novamente mais tarde.</p>
+            
+            <table id="passageiros-tabela">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="passageiros-tabela-corpo">
+               
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+   
+<ul id="lista-passageiros"></ul>
+
+</body>
+</html>

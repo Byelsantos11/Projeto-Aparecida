@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração - Ônibus</title>
+    <link rel="stylesheet" href="css/style-admin.css">
+</head>
+<body>
+    <header>
+        <h1>Ônibus</h1>
+        <nav>
+            <ul>
+                <li><a href="admin.html" aria-label="Ir para a página inicial">Início</a></li>
+                <li><a href="admin-coordenadores.html" aria-label="Ir para a página de coordenadores">Coordenadores</a></li>
+                <li><a href="admin-pagamentos.html" aria-label="Ir para a página de pagamentos">Pagamentos</a></li>
+                <li><a href="admin-passageiros.html" aria-label="Ir para a página de passageiros">Passageiros</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <button id="add-onibus-btn" aria-label="Adicionar um novo ônibus">Adicionar Ônibus</button>
+
+        
+        <p id="loading-message" style="display: none;">Carregando ônibus...</p>
+        <p id="error-message" style="display: none; color: red;">Erro ao carregar ônibus. Tente novamente mais tarde.</p>
+        
+        <table id="onibus-tabela">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Placa</th>
+                    <th>Modelo</th>
+                    <th>Capacidade</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="onibus-tabela-corpo">
+              
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2024 Sistema de Viagens Aparecida. Todos os direitos reservados.</p>
+    </footer>
+
+   
+<ul id="lista-onibus"></ul>
+
+    <script src="js/admin-onibus.js"></script>
+</body>
+</html>

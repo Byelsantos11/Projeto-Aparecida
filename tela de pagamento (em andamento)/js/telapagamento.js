@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             orderSummary.innerHTML = '';
 
+            
             data.items.forEach(item => {
                 const listItem = document.createElement('li');
                 listItem.textContent = `${item.name} - ${item.quantity}x - R$ ${item.price.toFixed(2)}`;

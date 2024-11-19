@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const carrinho = document.querySelectorAll('#order-summary li');
         atualizarTotal(carrinho);
     });
+    
 
     document.getElementById('cart-form').addEventListener('submit', function (event) {
         event.preventDefault();

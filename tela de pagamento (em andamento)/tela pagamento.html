@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-kMKNIxfHGxs66g6wWD4d9fhBvaF27AK9iPqPHkLU4F8=';">
+
     <title>Pagamento - Sistema de Viagens Aparecida</title>
     <link rel="stylesheet" href="css/telapagamento.css">
 </head>
@@ -22,12 +24,9 @@
             <section>
                 <h2>Resumo do Pedido</h2>
                 <ul class="order-summary" id="order-summary">
-                
-                    <li>Ônibus A - R$ 150,00</li>
-                    <li>Ônibus B - R$ 150,00</li>
-                    <li>Ônibus C - R$ 150,00</li>
+                    <li>Carregando pedido...</li>
                 </ul>
-                <p id="total-price"><strong>Total Final: R$ 450,00</strong></p>
+                <p id="total-price"><strong>Total Final: R$ 0,00</strong></p>
             </section>
 
             <section>
@@ -37,13 +36,13 @@
                 <input type="text" id="card-name" required aria-label="Nome no Cartão">
 
                 <label for="card-number">Número do Cartão:</label>
-                <input type="text" id="card-number" placeholder="0000 0000 0000 0000" required aria-label="Número do Cartão">
+                <input type="text" id="card-number" placeholder="0000 0000 0000 0000" required aria-label="Número do Cartão" pattern="\d{4} \d{4} \d{4} \d{4}" title="Formato: 0000 0000 0000 0000">
 
                 <label for="expiry-date">Validade (MM/AA):</label>
-                <input type="text" id="expiry-date" placeholder="MM/AA" required aria-label="Data de Validade">
+                <input type="text" id="expiry-date" placeholder="MM/AA" required aria-label="Data de Validade" pattern="\d{2}/\d{2}" title="Formato: MM/AA">
 
                 <label for="cvv">Código de Segurança (CVV):</label>
-                <input type="password" id="cvv" maxlength="4" required aria-label="CVV">
+                <input type="password" id="cvv" maxlength="4" required aria-label="CVV" pattern="\d{3,4}" title="Formato CVV: 3 ou 4 dígitos">
 
                 <label>
                     <input type="checkbox" id="save-card"> Salvar cartão para futuras compras
@@ -53,7 +52,7 @@
             <section>
                 <h3>Pix</h3>
                 <p>Escaneie o QR Code ou utilize a chave Pix: <strong>pagamentos@aparecida.com</strong></p>
-                <img src="qrcode-pix.png" alt="QR Code Pix" class="qrcode">
+                <img src="qrcode-pix.png.png" alt="QR Code para pagamento via Pix" class="qrcode">
             </section>
 
             <section>

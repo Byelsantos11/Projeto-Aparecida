@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endereço - Sistema de Viagens Aparecida</title>
+    <link rel="stylesheet" href="css/telapagamento.css">
+</head>
+<body>
+    <header>
+        <h1>Seu Endereço</h1>
+        <div class="progress-bar">
+            <div class="step">Carrinho</div>
+            <div class="step active">Endereço</div>
+            <div class="step">Pagamento</div>
+            <div class="step">Confirmação</div>
+        </div>
+    </header>
+
+    <main>
+        <form id="address-form">
+            <section>
+                <h2>Informe seu Endereço</h2>
+
+                <label for="cep">CEP:</label>
+                <div class="cep-container">
+                    <input type="text" id="cep" placeholder="Digite seu CEP" required>
+                    <button type="button" id="buscar-cep" class="btn-buscar-cep">Buscar CEP</button>
+                </div>
+
+                <label for="street">Rua:</label>
+                <input type="text" id="street" placeholder="Digite sua rua" required>
+
+                <label for="number">Número:</label>
+                <input type="text" id="number" placeholder="Número da residência" required>
+
+                <label for="complement">Complemento:</label>
+                <input type="text" id="complement" placeholder="Apto, Bloco, etc.">
+
+                <label for="city">Cidade:</label>
+                <input type="text" id="city" placeholder="Digite sua cidade" required>
+
+                <label for="state">Estado:</label>
+                <input type="text" id="state" placeholder="Digite seu estado" required>
+            </section>
+
+            <section class="actions">
+                <button type="button" id="continue-shopping" class="secondary-btn">Voltar ao Carrinho</button>
+                <button type="submit" id="proceed-to-payment">Prosseguir para Pagamento</button>
+            </section>
+        </form>
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="privacy.html">Políticas de Privacidade</a></li>
+            <li><a href="terms.html">Termos de Uso</a></li>
+        </ul>
+    </footer>
+
+    <script src="js/telaendereco.js"></script>
+</body>
+</html>

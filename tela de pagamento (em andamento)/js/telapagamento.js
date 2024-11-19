@@ -16,14 +16,50 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             totalPrice.innerHTML = `<strong>Total Final: R$ ${data.total.toFixed(2)}</strong>`;
-
         } catch (error) {
             console.error('Erro ao carregar os dados do pedido:', error);
+            alert('Não foi possível carregar o resumo do pedido. Tente novamente mais tarde.');
         }
+    };
+
+    const validatePaymentForm = () => {
+        const cardName = document.getElementById('card-name').value;
+        const cardNumber = document.getElementById('card-number').value;
+        const expiryDate = document.getElementById('expiry-date').value;
+        const cvv = document.getElementById('cvv').value;
+
+        const cardNumberRegex = /\d{4} \d{4} \d{4} \d{4}/;
+        const expiryDateRegex = /\d{2}\/\d{2}/;
+        const cvvRegex = /\d{3,4}/;
+
+        if (!cardName || !cardNumber || !expiryDate || !cvv) {
+            alert("Por favor, preencha todos os campos de pagamento.");
+            return false;
+        }
+
+        if (!cardNumberRegex.test(cardNumber)) {
+            alert("O número do cartão está no formato incorreto.");
+            return false;
+        }
+
+        if (!expiryDateRegex.test(expiryDate)) {
+            alert("A data de validade está no formato incorreto (MM/AA).");
+            return false;
+        }
+
+        if (!cvvRegex.test(cvv)) {
+            alert("O código CVV deve ter 3 ou 4 dígitos.");
+            return false;
+        }
+
+        return true;
     };
 
     const handlePayment = async (event) => {
         event.preventDefault();
+
+        
+        if (!validatePaymentForm()) return;
 
         const loadingSpinner = document.getElementById('loading-spinner');
         loadingSpinner.classList.remove('hidden');
@@ -61,8 +97,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    loadOrderSummary();
-
     const paymentForm = document.getElementById('payment-form');
     paymentForm.addEventListener('submit', handlePayment);
 
@@ -74,4 +108,6 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         console.error('Botão "Voltar" não encontrado.');
     }
+
+    loadOrderSummary();
 });

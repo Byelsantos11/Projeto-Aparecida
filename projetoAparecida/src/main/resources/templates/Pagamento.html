@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pagamento - Sistema de Viagens Aparecida</title>
+    <link rel="stylesheet" href="/css/Pagamento.css">
+</head>
+
+<body>
+
+	
+	<div class="alert alert-warning" id="alertaSucesso" role="alert">
+	  Dados Enviados com Sucesso!
+	</div>
+
+    <main>
+        <form id="payment-form" method="post">
+
+            <section>
+                <h2>Prencher Dados</h2>
+                <label for="card-name">Nome:</label>
+                <input type="text" id="card_nome" placeholder="Lucas Fontes" required aria-label="Nome">
+
+                <label for="card-cpf">CPF:</label>
+                <input type="text" id="card_cpf" placeholder="132.123.123-41" required ara-lable="CPF">
+
+                <label for="email">Email:</label>
+                <input type="email" id="card_email" placeholder="example@gmail.com" required aria-label="email">
+
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="card_telefone" placeholder="(11) 999999999" required aria-label="telefone">
+
+                <section>
+                    <h2>Confirme os Assentos</h2>
+                    <label for="card-poltrona">Poltronas:</label>
+                    <input type="text" id="card_poltrona" placeholder="A1, A2" required aria-label="Nome">
+                    <label for="card-poltrona">Valor Total:</label>
+                    <input type="text" id="card_poltrona" placeholder="150,00" required aria-label="Nome">
+                    <label for="card-poltrona">Digite o método de pagamento</label>
+                    <input type="text" id="card_tipo_pagamento" placeholder="Pix, Débito ou Crédito" required aria-label="tipo_pagamento">
+                </section>
+            </section>
+
+            <section>
+               
+				<a href="/Home.html"><button type="button" id="back-button" class="secondary-btn">Voltar</button></a> 
+                <button type="submit" id="confirm-payment">Confirmar pagamento</button>
+            </section>
+        </form>
+    </main>
+
+
+    <script src="/js/Pagamento.js"></script>
+</body>
+</html>

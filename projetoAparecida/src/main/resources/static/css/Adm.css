@@ -1,0 +1,206 @@
+
+
+
+#sidebar {
+    width: 200px;
+    background-color: #FFD700;
+    color: black;
+    position: fixed;
+    height: 100vh;
+    padding: 15px;
+    top: 0;
+    left: 0;
+}
+
+
+.main-content {
+    margin-left: 220px; 
+    padding-top: 20px;
+    flex: 1;
+}
+
+
+.card {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.info-descrição p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+
+.side-item a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+}
+
+.side-item.active a {
+    background-color: #FFF5B7;
+    font-weight: bold;
+}
+
+.side-item a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn-sm lixeira{
+	background-color: #FFD700;
+}
+
+#alertaSucesso{
+		position: fixed;
+		top: 60%;
+		left: 40%;
+		z-index: 9999;
+		display: none;
+		color: black;
+		background-color: #FFD700;
+		width: 25%;
+		height: 60px;
+		text-align: center;
+		border-radius: 50px;
+}
+
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    animation: modalFadeIn 0.3s ease-in-out;
+    position: relative;
+}
+
+
+.modal-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+.modal-content button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+.modal-content button#save-edit {
+	background-color: #FFD700;
+    color: black;
+}
+
+.modal-content button#save-edit:hover {
+	background-color: rgb(234, 199, 0);
+
+}
+
+
+.modal-content button#cancel-edit {
+    background-color:  rgb(168, 168, 168);
+  color: black;
+}
+
+.modal-content button#cancel-edit:hover {
+    background-color: rgb(143, 143, 143);
+}
+
+
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.modal-content .close:hover {
+    color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 1200px) {
+   
+    #sidebar {
+        height: 100vh;
+		width: 30%;
+    }
+
+    .col-md-4 {
+        flex: 1 1 10%; 
+    }
+	
+	#alertaSucesso{
+	width: 60%;
+	top: 80%;
+	left: 20%;
+	
+	}
+	
+}
+

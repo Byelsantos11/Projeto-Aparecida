@@ -1,0 +1,317 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+main {
+    width: 100%;
+}
+
+header {
+    background-color: #FFD700;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    color: #34495e;
+}
+
+.informacoes {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.informacoes p {
+    margin: 5px 0;
+}
+
+.informacoes .assento {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+}
+
+.informacoes .assento.ocupado {
+	background-color: red;
+}
+
+.assento-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+}
+
+.onibus {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.fileira {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.assento {
+    background-color: #2ecc71;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    position: relative;
+}
+
+.assento:hover {
+    background-color: #27ae60;
+    transform: scale(1.05);
+}
+
+
+#alertaSucesso{
+	position: fixed;
+	top: 25%;
+	left: 40%;
+	z-index: 9999;
+	display: none;
+	color: black;
+	background-color: #FFD700;
+	width: 20%;
+	height: 60px;
+	text-align: center;
+	border-radius: 50px;
+}
+
+
+#alertaOcupado{
+	position: fixed;
+	top: 60%;
+	left: 40%;
+	z-index: 1;
+	display: none;
+}
+
+.assento.selecionado {
+    animation: pulse 0.5s ease;
+    box-shadow: 0 0 10px rgba(46, 204, 113, 0.6);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.corredor {
+    width: 30px;
+    height: 50px;
+    background-color: #bdc3c7;
+}
+
+.reservar-btn {
+    background-color: #3498db;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: block;
+    margin: 20px auto 0;
+}
+
+.reservar-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #FFD700;
+    color: black;
+    width: 100%;
+}
+
+footer p {
+    color: #666;
+}
+
+.mensagem {
+    margin-top: 15px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.assento.reservado {
+    background-color: red;
+    color: white;
+    width: 100%;
+}
+
+
+#modalReserva {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px 40px; 
+    border-radius: 10px;
+    width: 45%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #555;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+label {
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 1px;
+    width: 100%;
+}
+
+
+
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    pointer-events: none;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+input[name="nome"] {
+    pointer-events: auto;
+}
+
+button {
+    padding: 15px;
+    background-color: #FFD700;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s;
+    box-sizing: border-box;
+}
+
+button:hover {
+    background-color: #FFC107;
+}
+
+button:active {
+    background-color: #FFB300;
+}
+
+
+@media (max-width: 1800px){
+	.modal-content .close{
+		margin-top: 20px;
+		font-size: 40px;
+	}
+	
+	
+
+	
+}
+
+
+
+@media(max-width: 1200px){
+	
+	.modal-content .close{
+			margin-top: 10px;
+			font-size: 60x;
+		}
+	
+	.modal-content {
+		width: 70vh;
+	}
+	
+	#alertaSucesso{
+		top: 30%;
+		width: 50%;
+		left: 25%;
+		height: 60px;
+}
+
+}
+	
+
+	
